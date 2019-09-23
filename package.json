@@ -1,0 +1,35 @@
+{
+  "name": "monorepo",
+  "version": "0.1.0",
+  "description": "monorepo de front y back js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "client": "yarn workspace @fullstack/frontend serve",
+    "server": "yarn workspace @fullstack/backend start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krbaio3/monorepo.git"
+  },
+  "keywords": [
+    "vuejs",
+    "adonisjs"
+  ],
+  "author": "krbaio3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krbaio3/monorepo/issues"
+  },
+  "homepage": "https://github.com/krbaio3/monorepo#readme",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "concurrently": "^4.1.2",
+    "lint-staged": "^9.3.0",
+    "uuid": "^3.3.3"
+  }
+}

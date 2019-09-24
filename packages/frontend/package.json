@@ -1,6 +1,6 @@
 {
   "name": "@fullstack/frontend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Front for monorepo vuejs",
   "repository": "https://github.com/krbaio3/monorepo.git",
   "author": "krbaio3",

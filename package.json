@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "lerna run test",
+    "test:since": "lerna run test --since",
     "test:frontend": "lerna run test --scope=@fullstack/frontend",
     "test:backend": "lerna run test --scope=@fullstack/backend",
     "test:both": "lerna run test --scope={@fullstack/frontend,@fullstack/backend}",

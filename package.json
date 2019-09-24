@@ -4,10 +4,17 @@
   "description": "monorepo de front y back js",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "lerna run test",
+    "test:frontend": "lerna run test --scope=@fullstack/frontend",
+    "test:backend": "lerna run test --scope=@fullstack/backend",
+    "test:both": "lerna run test --scope={@fullstack/frontend,@fullstack/backend}",
     "client": "yarn workspace @fullstack/frontend serve",
     "server": "yarn workspace @fullstack/backend start",
-    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\""
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\"",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff",
+    "commit": "yarn git-cz",
+    "first-commit": "commitizen init cz-conventional-changelog --yarn --dev --exact"
   },
   "repository": {
     "type": "git",
@@ -27,9 +34,17 @@
   "workspaces": [
     "packages/*"
   ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "concurrently": "^4.1.2",
     "lint-staged": "^9.3.0",
     "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "lerna": "^3.16.4"
   }
 }
